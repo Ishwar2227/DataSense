@@ -1,0 +1,147 @@
+{
+  "name": "CSV ingestion pipeline",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "upload-csv",
+        "responseMode": "responseNode",
+        "options": {
+          "binaryPropertyName": "data"
+        }
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -192,
+        -96
+      ],
+      "id": "4a5ef57c-c2f6-4d96-a6c7-999c989c0cce",
+      "name": "Webhook",
+      "webhookId": "cd0f6418-f399-42a6-af55-5e0d228d3fe4"
+    },
+    {
+      "parameters": {
+        "binaryPropertyName": "data0",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1.1,
+      "position": [
+        128,
+        -96
+      ],
+      "id": "d2168868-bdbd-453f-ae4c-6174c1a117ab",
+      "name": "Extract from File"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://localhost:8000/analyze",
+        "sendBody": true,
+        "specifyBody": "=",
+        "bodyParameters": {
+          "parameters": [
+            {}
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        592,
+        -96
+      ],
+      "id": "b20d3cbb-fb15-4aa8-adf3-c7d4c19a8c87",
+      "name": "Call Backend Analyzer"
+    },
+    {
+      "parameters": {
+        "jsCode": "return [\n  {\n    json: {\n      data: $input.all().map(item => item.json)\n    }\n  }\n];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        352,
+        -96
+      ],
+      "id": "cbe615ec-d0e9-47f2-a4c7-6640d8dfef92",
+      "name": "Code in JavaScript"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{$json}}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        800,
+        -96
+      ],
+      "id": "70d2b651-c0b5-40a9-a0ed-9ae30fe5c766",
+      "name": "Respond to Webhook"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Extract from File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract from File": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Call Backend Analyzer": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript": {
+      "main": [
+        [
+          {
+            "node": "Call Backend Analyzer",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "c86573c8-04ac-4acd-a828-1688e42735c7",
+  "meta": {
+    "instanceId": "9c543062a4e288c66418a3b62079382e54da3aafc29e58bdbb0dfebda31d9b04"
+  },
+  "id": "IwjRDfsORAuXkw3C",
+  "tags": []
+}
