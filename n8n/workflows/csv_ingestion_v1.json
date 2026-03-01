@@ -1,5 +1,4 @@
 {
-  "name": "CSV ingestion pipeline",
   "nodes": [
     {
       "parameters": {
@@ -37,28 +36,29 @@
     {
       "parameters": {
         "method": "POST",
-        "url": "http://localhost:8000/analyze",
+        "url": "http://127.0.0.1:8000/analyze",
         "sendBody": true,
-        "specifyBody": "=",
+        "specifyBody": "=json",
         "bodyParameters": {
           "parameters": [
             {}
           ]
         },
+        "jsonBody": "={{$json}}",
         "options": {}
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.4,
       "position": [
-        592,
-        -96
+        816,
+        -272
       ],
       "id": "b20d3cbb-fb15-4aa8-adf3-c7d4c19a8c87",
       "name": "Call Backend Analyzer"
     },
     {
       "parameters": {
-        "jsCode": "return [\n  {\n    json: {\n      data: $input.all().map(item => item.json)\n    }\n  }\n];"
+        "jsCode": "const items = $input.all();\n\nif (!items || items.length === 0) {\n  return [\n    {\n      json: {\n        status: \"error\",\n        error_code: \"EMPTY_FILE\",\n        message: \"Uploaded CSV contains no rows\"\n      }\n    }\n  ];\n}\n\nconst rows = items.map(item => item.json);\n\nif (!rows[0] || typeof rows[0] !== \"object\") {\n  return [\n    {\n      json: {\n        status: \"error\",\n        error_code: \"INVALID_SCHEMA\",\n        message: \"CSV structure invalid\"\n      }\n    }\n  ];\n}\n\nconst columns = Object.keys(rows[0]);\n\nconst firstItem = items[0];\n\nconst fileName =\n  firstItem.binary?.data0?.fileName || \"unknown_dataset.csv\";\n\nreturn [\n  {\n    json: {\n      dataset_name: fileName,\n      row_count: rows.length,\n      columns: columns,\n      rows: rows\n    }\n  }\n];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -78,14 +78,72 @@
       "type": "n8n-nodes-base.respondToWebhook",
       "typeVersion": 1.5,
       "position": [
-        800,
-        -96
+        1440,
+        -80
       ],
       "id": "70d2b651-c0b5-40a9-a0ed-9ae30fe5c766",
       "name": "Respond to Webhook"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "fc61ece8-2d13-4429-973f-4458ffeaeebd",
+              "leftValue": "={{$json.status}}",
+              "rightValue": "error",
+              "operator": {
+                "type": "string",
+                "operation": "notEquals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        560,
+        -96
+      ],
+      "id": "5f2b8906-2c94-45db-ab87-1adc9b542667",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "jsCode": "const backend = items[0].json || {};\n\nconst status = backend.status || \"unknown\";\nconst summary = backend.summary || null;\nconst missing = backend.missing_values || null;\n\n// Backend should echo dataset_name (if not, we pass it through HTTP body earlier)\nconst dataset = backend.dataset_name || \"unknown\";\nconst rowCount = backend.row_count || 0;\n\nreturn [\n  {\n    json: {\n      success: status === \"success\",\n      dataset: dataset,\n      analysis: status === \"success\"\n        ? {\n            total_rows: summary?.total_rows ?? rowCount,\n            total_columns: summary?.total_columns ?? 0,\n            missing_values: missing ?? {}\n          }\n        : null,\n      error: status !== \"success\"\n        ? {\n            code: \"ANALYSIS_FAILED\",\n            message: \"Backend analysis failed\",\n            source: \"backend\"\n          }\n        : null,\n      timestamp: new Date().toISOString()\n    }\n  }\n];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1024,
+        -272
+      ],
+      "id": "cc4ae8ce-682a-4cfe-99ff-b684c3ff3d9f",
+      "name": "Code in JavaScript1"
+    },
+    {
+      "parameters": {
+        "jsCode": "const response = items[0].json;\n\n// Log structured metadata\nconsole.log(\"========== CSV ANALYSIS RESPONSE ==========\");\nconsole.log(\"Success:\", response.success);\nconsole.log(\"Dataset:\", response.dataset);\nconsole.log(\"Rows:\", response.analysis?.total_rows ?? 0);\nconsole.log(\"Columns:\", response.analysis?.total_columns ?? 0);\nconsole.log(\"Timestamp:\", response.timestamp);\nconsole.log(\"===========================================\");\n\n// Always pass data forward unchanged\nreturn items;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1232,
+        -272
+      ],
+      "id": "2f5e122a-a6e9-4e44-8f8d-f7a67cfa8d6d",
+      "name": "Logger"
     }
   ],
-  "pinData": {},
   "connections": {
     "Webhook": {
       "main": [
@@ -113,7 +171,7 @@
       "main": [
         [
           {
-            "node": "Respond to Webhook",
+            "node": "Code in JavaScript1",
             "type": "main",
             "index": 0
           }
@@ -124,7 +182,47 @@
       "main": [
         [
           {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
             "node": "Call Backend Analyzer",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript1": {
+      "main": [
+        [
+          {
+            "node": "Logger",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Logger": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
             "type": "main",
             "index": 0
           }
@@ -132,16 +230,8 @@
       ]
     }
   },
-  "active": false,
-  "settings": {
-    "executionOrder": "v1",
-    "binaryMode": "separate",
-    "availableInMCP": false
-  },
-  "versionId": "c86573c8-04ac-4acd-a828-1688e42735c7",
+  "pinData": {},
   "meta": {
     "instanceId": "9c543062a4e288c66418a3b62079382e54da3aafc29e58bdbb0dfebda31d9b04"
-  },
-  "id": "IwjRDfsORAuXkw3C",
-  "tags": []
+  }
 }
