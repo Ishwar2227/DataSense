@@ -1,0 +1,773 @@
+{
+    "filename": "Superstore.csv",
+    "cleaning_log": [
+        "Detected non-UTF-8 encoding (Windows-1252), converted automatically",
+        "'Customer Name': Skipped fuzzy matching (793 unique values, exceeds performance threshold)",
+        "'City': Skipped fuzzy matching (531 unique values, exceeds performance threshold)",
+        "'Product Name': Skipped fuzzy matching (1850 unique values, exceeds performance threshold)"
+    ],
+    "insights": {
+        "selected_columns": {
+            "date_col": "Order Date",
+            "value_col": "Sales",
+            "group_col": "Region"
+        },
+        "trend": [
+            {
+                "month": "2014-01",
+                "Sales": 14236.895,
+                "change_pct": null
+            },
+            {
+                "month": "2014-02",
+                "Sales": 4519.892,
+                "change_pct": -68.25226287052058
+            },
+            {
+                "month": "2014-03",
+                "Sales": 55691.009,
+                "change_pct": 1132.1314093345593
+            },
+            {
+                "month": "2014-04",
+                "Sales": 28295.345,
+                "change_pct": -49.192256509484324
+            },
+            {
+                "month": "2014-05",
+                "Sales": 23648.287,
+                "change_pct": -16.42340109300664
+            },
+            {
+                "month": "2014-06",
+                "Sales": 34595.1276,
+                "change_pct": 46.290205290556564
+            },
+            {
+                "month": "2014-07",
+                "Sales": 33946.393,
+                "change_pct": -1.8752195612656286
+            },
+            {
+                "month": "2014-08",
+                "Sales": 27909.4685,
+                "change_pct": -17.78369943457615
+            },
+            {
+                "month": "2014-09",
+                "Sales": 81777.3508,
+                "change_pct": 193.0093448393688
+            },
+            {
+                "month": "2014-10",
+                "Sales": 31453.393,
+                "change_pct": -61.53776969747472
+            },
+            {
+                "month": "2014-11",
+                "Sales": 78628.7167,
+                "change_pct": 149.98484805756885
+            },
+            {
+                "month": "2014-12",
+                "Sales": 69545.6205,
+                "change_pct": -11.551881527782836
+            },
+            {
+                "month": "2015-01",
+                "Sales": 18174.0756,
+                "change_pct": -73.867404634056
+            },
+            {
+                "month": "2015-02",
+                "Sales": 11951.411,
+                "change_pct": -34.239235804653525
+            },
+            {
+                "month": "2015-03",
+                "Sales": 38726.252,
+                "change_pct": 224.0307943555786
+            },
+            {
+                "month": "2015-04",
+                "Sales": 34195.2085,
+                "change_pct": -11.700185961708865
+            },
+            {
+                "month": "2015-05",
+                "Sales": 30131.6865,
+                "change_pct": -11.883308154123407
+            },
+            {
+                "month": "2015-06",
+                "Sales": 24797.292,
+                "change_pct": -17.70360414442782
+            },
+            {
+                "month": "2015-07",
+                "Sales": 28765.325,
+                "change_pct": 16.00188036661423
+            },
+            {
+                "month": "2015-08",
+                "Sales": 36898.3322,
+                "change_pct": 28.273649611120312
+            },
+            {
+                "month": "2015-09",
+                "Sales": 64595.918,
+                "change_pct": 75.06460088729973
+            },
+            {
+                "month": "2015-10",
+                "Sales": 31404.9235,
+                "change_pct": -51.38249525302822
+            },
+            {
+                "month": "2015-11",
+                "Sales": 75972.5635,
+                "change_pct": 141.91290738218166
+            },
+            {
+                "month": "2015-12",
+                "Sales": 74919.5212,
+                "change_pct": -1.3860823585346016
+            },
+            {
+                "month": "2016-01",
+                "Sales": 18542.490999999998,
+                "change_pct": -75.2501207922829
+            },
+            {
+                "month": "2016-02",
+                "Sales": 22978.815,
+                "change_pct": 23.925178121968614
+            },
+            {
+                "month": "2016-03",
+                "Sales": 51715.875,
+                "change_pct": 125.05892927899023
+            },
+            {
+                "month": "2016-04",
+                "Sales": 38750.039000000004,
+                "change_pct": -25.07128807160276
+            },
+            {
+                "month": "2016-05",
+                "Sales": 56987.728,
+                "change_pct": 47.06495650236635
+            },
+            {
+                "month": "2016-06",
+                "Sales": 40344.534,
+                "change_pct": -29.20487372298822
+            },
+            {
+                "month": "2016-07",
+                "Sales": 39261.963,
+                "change_pct": -2.6833151673036904
+            },
+            {
+                "month": "2016-08",
+                "Sales": 31115.3743,
+                "change_pct": -20.749315819996074
+            },
+            {
+                "month": "2016-09",
+                "Sales": 73410.0249,
+                "change_pct": 135.9284647911178
+            },
+            {
+                "month": "2016-10",
+                "Sales": 59687.745,
+                "change_pct": -18.692651199468536
+            },
+            {
+                "month": "2016-11",
+                "Sales": 79411.9658,
+                "change_pct": 33.045679309881784
+            },
+            {
+                "month": "2016-12",
+                "Sales": 96999.043,
+                "change_pct": 22.146633725568844
+            },
+            {
+                "month": "2017-01",
+                "Sales": 43971.374,
+                "change_pct": -54.66823935572231
+            },
+            {
+                "month": "2017-02",
+                "Sales": 20301.1334,
+                "change_pct": -53.83102333804717
+            },
+            {
+                "month": "2017-03",
+                "Sales": 58872.3528,
+                "change_pct": 189.99539897609856
+            },
+            {
+                "month": "2017-04",
+                "Sales": 36521.5361,
+                "change_pct": -37.96487763268058
+            },
+            {
+                "month": "2017-05",
+                "Sales": 44261.1102,
+                "change_pct": 21.19180879689233
+            },
+            {
+                "month": "2017-06",
+                "Sales": 52981.7257,
+                "change_pct": 19.702658746232714
+            },
+            {
+                "month": "2017-07",
+                "Sales": 45264.416,
+                "change_pct": -14.565984021920986
+            },
+            {
+                "month": "2017-08",
+                "Sales": 63120.888,
+                "change_pct": 39.449248610652575
+            },
+            {
+                "month": "2017-09",
+                "Sales": 87866.652,
+                "change_pct": 39.203764053509516
+            },
+            {
+                "month": "2017-10",
+                "Sales": 77776.9232,
+                "change_pct": -11.483001309757423
+            },
+            {
+                "month": "2017-11",
+                "Sales": 118447.825,
+                "change_pct": 52.291734008835135
+            },
+            {
+                "month": "2017-12",
+                "Sales": 83829.3188,
+                "change_pct": -29.22679770607861
+            }
+        ],
+        "latest_month": "2017-12",
+        "previous_month": "2017-11",
+        "top_contributors": [
+            {
+                "Region": "East",
+                "target": 20084.416,
+                "compare": 45633.639,
+                "change": -25549.223,
+                "change_pct": -55.98769583113895
+            },
+            {
+                "Region": "South",
+                "target": 15209.737,
+                "compare": 28717.421,
+                "change": -13507.684,
+                "change_pct": -47.03654969574044
+            },
+            {
+                "Region": "Central",
+                "target": 18883.0708,
+                "compare": 15154.978,
+                "change": 3728.092800000002,
+                "change_pct": 24.59979024713861
+            },
+            {
+                "Region": "West",
+                "target": 29652.095,
+                "compare": 28941.787,
+                "change": 710.3080000000009,
+                "change_pct": 2.4542644861563003
+            }
+        ],
+        "outlier_count": 127,
+        "outliers": [
+            {
+                "Row ID": 28,
+                "Order ID": "US-2015-150630",
+                "Order Date": "2015-09-17T00:00:00",
+                "Ship Date": "2015-09-21T00:00:00",
+                "Ship Mode": "Standard Class",
+                "Customer ID": "TB-21520",
+                "Customer Name": "Tracy Blumstein",
+                "Segment": "Consumer",
+                "Country": "United States",
+                "City": "Philadelphia",
+                "State": "Pennsylvania",
+                "Postal Code": 19140,
+                "Region": "East",
+                "Product ID": "FUR-BO-10004834",
+                "Category": "Furniture",
+                "Sub-Category": "Bookcases",
+                "Product Name": "Riverside Palais Royal Lawyers Bookcase, Royale Cherry Finish",
+                "Sales": 3083.43,
+                "Quantity": 7,
+                "Discount": 0.5,
+                "Profit": -1665.0522,
+                "z_score": 4.578571089994082
+            },
+            {
+                "Row ID": 166,
+                "Order ID": "CA-2014-139892",
+                "Order Date": "2014-09-08T00:00:00",
+                "Ship Date": "2014-09-12T00:00:00",
+                "Ship Mode": "Standard Class",
+                "Customer ID": "BM-11140",
+                "Customer Name": "Becky Martin",
+                "Segment": "Consumer",
+                "Country": "United States",
+                "City": "San Antonio",
+                "State": "Texas",
+                "Postal Code": 78207,
+                "Region": "Central",
+                "Product ID": "TEC-MA-10000822",
+                "Category": "Technology",
+                "Sub-Category": "Machines",
+                "Product Name": "Lexmark Mx611Dhe Monochrome Laser Printer",
+                "Sales": 8159.952,
+                "Quantity": 8,
+                "Discount": 0.4,
+                "Profit": -1359.992,
+                "z_score": 12.723876999108555
+            },
+            {
+                "Row ID": 252,
+                "Order ID": "CA-2016-145625",
+                "Order Date": "2016-09-11T00:00:00",
+                "Ship Date": "2016-09-17T00:00:00",
+                "Ship Mode": "Standard Class",
+                "Customer ID": "KC-16540",
+                "Customer Name": "Kelly Collister",
+                "Segment": "Consumer",
+                "Country": "United States",
+                "City": "San Diego",
+                "State": "California",
+                "Postal Code": 92037,
+                "Region": "West",
+                "Product ID": "TEC-AC-10003832",
+                "Category": "Technology",
+                "Sub-Category": "Accessories",
+                "Product Name": "Logitech P710E Mobile Speakerphone",
+                "Sales": 3347.37,
+                "Quantity": 13,
+                "Discount": 0,
+                "Profit": 636.0003,
+                "z_score": 5.002064190516777
+            },
+            {
+                "Row ID": 263,
+                "Order ID": "US-2014-106992",
+                "Order Date": "2014-09-19T00:00:00",
+                "Ship Date": "2014-09-21T00:00:00",
+                "Ship Mode": "Second Class",
+                "Customer ID": "SB-20290",
+                "Customer Name": "Sean Braxton",
+                "Segment": "Corporate",
+                "Country": "United States",
+                "City": "Houston",
+                "State": "Texas",
+                "Postal Code": 77036,
+                "Region": "Central",
+                "Product ID": "TEC-MA-10000822",
+                "Category": "Technology",
+                "Sub-Category": "Machines",
+                "Product Name": "Lexmark Mx611Dhe Monochrome Laser Printer",
+                "Sales": 3059.982,
+                "Quantity": 3,
+                "Discount": 0.4,
+                "Profit": -509.997,
+                "z_score": 4.540948652239076
+            },
+            {
+                "Row ID": 264,
+                "Order ID": "US-2014-106992",
+                "Order Date": "2014-09-19T00:00:00",
+                "Ship Date": "2014-09-21T00:00:00",
+                "Ship Mode": "Second Class",
+                "Customer ID": "SB-20290",
+                "Customer Name": "Sean Braxton",
+                "Segment": "Corporate",
+                "Country": "United States",
+                "City": "Houston",
+                "State": "Texas",
+                "Postal Code": 77036,
+                "Region": "Central",
+                "Product ID": "TEC-MA-10003353",
+                "Category": "Technology",
+                "Sub-Category": "Machines",
+                "Product Name": "Xerox Workcentre 6505Dn Laser Multifunction Printer",
+                "Sales": 2519.958,
+                "Quantity": 7,
+                "Discount": 0.4,
+                "Profit": -251.9958,
+                "z_score": 3.674477340135311
+            },
+            {
+                "Row ID": 319,
+                "Order ID": "CA-2014-164973",
+                "Order Date": "2014-11-04T00:00:00",
+                "Ship Date": "2014-11-09T00:00:00",
+                "Ship Mode": "Standard Class",
+                "Customer ID": "NM-18445",
+                "Customer Name": "Nathan Mautz",
+                "Segment": "Home Office",
+                "Country": "United States",
+                "City": "New York City",
+                "State": "New York",
+                "Postal Code": 10024,
+                "Region": "East",
+                "Product ID": "TEC-MA-10002927",
+                "Category": "Technology",
+                "Sub-Category": "Machines",
+                "Product Name": "Canon Imageclass Mf7460 Monochrome Digital Laser Multifunction Copier",
+                "Sales": 3991.98,
+                "Quantity": 2,
+                "Discount": 0,
+                "Profit": 1995.99,
+                "z_score": 6.036344282688993
+            },
+            {
+                "Row ID": 354,
+                "Order ID": "CA-2016-129714",
+                "Order Date": "2016-09-01T00:00:00",
+                "Ship Date": "2016-09-03T00:00:00",
+                "Ship Mode": "First Class",
+                "Customer ID": "AB-10060",
+                "Customer Name": "Adam Bellavance",
+                "Segment": "Home Office",
+                "Country": "United States",
+                "City": "New York City",
+                "State": "New York",
+                "Postal Code": 10009,
+                "Region": "East",
+                "Product ID": "OFF-BI-10004995",
+                "Category": "Office Supplies",
+                "Sub-Category": "Binders",
+                "Product Name": "Gbc Docubind P400 Electric Binding System",
+                "Sales": 4355.168,
+                "Quantity": 4,
+                "Discount": 0.2,
+                "Profit": 1415.4296,
+                "z_score": 6.619081314562285
+            },
+            {
+                "Row ID": 400,
+                "Order ID": "CA-2016-108987",
+                "Order Date": "2016-09-08T00:00:00",
+                "Ship Date": "2016-09-10T00:00:00",
+                "Ship Mode": "Second Class",
+                "Customer ID": "AG-10675",
+                "Customer Name": "Anna Gayman",
+                "Segment": "Consumer",
+                "Country": "United States",
+                "City": "Houston",
+                "State": "Texas",
+                "Postal Code": 77036,
+                "Region": "Central",
+                "Product ID": "FUR-BO-10004834",
+                "Category": "Furniture",
+                "Sub-Category": "Bookcases",
+                "Product Name": "Riverside Palais Royal Lawyers Bookcase, Royale Cherry Finish",
+                "Sales": 2396.2656,
+                "Quantity": 4,
+                "Discount": 0.32,
+                "Profit": -317.1528,
+                "z_score": 3.476012242055848
+            },
+            {
+                "Row ID": 488,
+                "Order ID": "CA-2014-154627",
+                "Order Date": "2014-10-29T00:00:00",
+                "Ship Date": "2014-10-31T00:00:00",
+                "Ship Mode": "First Class",
+                "Customer ID": "SA-20830",
+                "Customer Name": "Sue Ann Reed",
+                "Segment": "Consumer",
+                "Country": "United States",
+                "City": "Chicago",
+                "State": "Illinois",
+                "Postal Code": 60610,
+                "Region": "Central",
+                "Product ID": "TEC-PH-10001363",
+                "Category": "Technology",
+                "Sub-Category": "Phones",
+                "Product Name": "Apple Iphone 5S",
+                "Sales": 2735.952,
+                "Quantity": 6,
+                "Discount": 0.2,
+                "Profit": 341.994,
+                "z_score": 4.021040834695814
+            },
+            {
+                "Row ID": 510,
+                "Order ID": "CA-2015-145352",
+                "Order Date": "2015-03-16T00:00:00",
+                "Ship Date": "2015-03-22T00:00:00",
+                "Ship Mode": "Standard Class",
+                "Customer ID": "CM-12385",
+                "Customer Name": "Christopher Martinez",
+                "Segment": "Consumer",
+                "Country": "United States",
+                "City": "Atlanta",
+                "State": "Georgia",
+                "Postal Code": 30318,
+                "Region": "South",
+                "Product ID": "OFF-BI-10003527",
+                "Category": "Office Supplies",
+                "Sub-Category": "Binders",
+                "Product Name": "Fellowes Pb500 Electric Punch Plastic Comb Binding Machine With Manual Bind",
+                "Sales": 6354.95,
+                "Quantity": 5,
+                "Discount": 0,
+                "Profit": 3177.475,
+                "z_score": 9.827741917538251
+            },
+            {
+                "Row ID": 516,
+                "Order ID": "CA-2017-127432",
+                "Order Date": "2017-01-22T00:00:00",
+                "Ship Date": "2017-01-27T00:00:00",
+                "Ship Mode": "Standard Class",
+                "Customer ID": "AD-10180",
+                "Customer Name": "Alan Dominguez",
+                "Segment": "Home Office",
+                "Country": "United States",
+                "City": "Great Falls",
+                "State": "Montana",
+                "Postal Code": 59405,
+                "Region": "West",
+                "Product ID": "TEC-CO-10003236",
+                "Category": "Technology",
+                "Sub-Category": "Copiers",
+                "Product Name": "Canon Image Class D660 Copier",
+                "Sales": 2999.95,
+                "Quantity": 5,
+                "Discount": 0,
+                "Profit": 1379.977,
+                "z_score": 4.444626996519676
+            },
+            {
+                "Row ID": 684,
+                "Order ID": "US-2017-168116",
+                "Order Date": "2017-11-04T00:00:00",
+                "Ship Date": "2017-11-04T00:00:00",
+                "Ship Mode": "Same Day",
+                "Customer ID": "GT-14635",
+                "Customer Name": "Grant Thornton",
+                "Segment": "Corporate",
+                "Country": "United States",
+                "City": "Burlington",
+                "State": "North Carolina",
+                "Postal Code": 27217,
+                "Region": "South",
+                "Product ID": "TEC-MA-10004125",
+                "Category": "Technology",
+                "Sub-Category": "Machines",
+                "Product Name": "Cubify Cubex 3D Printer Triple Head Print",
+                "Sales": 7999.98,
+                "Quantity": 4,
+                "Discount": 0.5,
+                "Profit": -3839.9904,
+                "z_score": 12.46720109444531
+            },
+            {
+                "Row ID": 978,
+                "Order ID": "CA-2017-159366",
+                "Order Date": "2017-01-07T00:00:00",
+                "Ship Date": "2017-01-10T00:00:00",
+                "Ship Mode": "First Class",
+                "Customer ID": "BW-11110",
+                "Customer Name": "Bart Watters",
+                "Segment": "Corporate",
+                "Country": "United States",
+                "City": "Detroit",
+                "State": "Michigan",
+                "Postal Code": 48205,
+                "Region": "Central",
+                "Product ID": "TEC-MA-10000822",
+                "Category": "Technology",
+                "Sub-Category": "Machines",
+                "Product Name": "Lexmark Mx611Dhe Monochrome Laser Printer",
+                "Sales": 3059.982,
+                "Quantity": 2,
+                "Discount": 0.1,
+                "Profit": 679.996,
+                "z_score": 4.540948652239076
+            },
+            {
+                "Row ID": 995,
+                "Order ID": "CA-2014-117639",
+                "Order Date": "2014-05-21T00:00:00",
+                "Ship Date": "2014-05-25T00:00:00",
+                "Ship Mode": "Standard Class",
+                "Customer ID": "MW-18235",
+                "Customer Name": "Mitch Willingham",
+                "Segment": "Corporate",
+                "Country": "United States",
+                "City": "Virginia Beach",
+                "State": "Virginia",
+                "Postal Code": 23464,
+                "Region": "South",
+                "Product ID": "OFF-BI-10003925",
+                "Category": "Office Supplies",
+                "Sub-Category": "Binders",
+                "Product Name": "Fellowes Pb300 Plastic Comb Binding Machine",
+                "Sales": 2715.93,
+                "Quantity": 7,
+                "Discount": 0,
+                "Profit": 1276.4871,
+                "z_score": 3.9889154317304976
+            },
+            {
+                "Row ID": 1002,
+                "Order ID": "CA-2015-124891",
+                "Order Date": "2015-07-31T00:00:00",
+                "Ship Date": "2015-07-31T00:00:00",
+                "Ship Mode": "Same Day",
+                "Customer ID": "RH-19495",
+                "Customer Name": "Rick Hansen",
+                "Segment": "Consumer",
+                "Country": "United States",
+                "City": "New York City",
+                "State": "New York",
+                "Postal Code": 10024,
+                "Region": "East",
+                "Product ID": "TEC-AC-10003033",
+                "Category": "Technology",
+                "Sub-Category": "Accessories",
+                "Product Name": "Plantronics Cs510 - Over-The-Head Monaural Wireless Headset System",
+                "Sales": 2309.65,
+                "Quantity": 7,
+                "Discount": 0,
+                "Profit": 762.1845,
+                "z_score": 3.3370370620996703
+            },
+            {
+                "Row ID": 1086,
+                "Order ID": "US-2016-143819",
+                "Order Date": "2016-03-01T00:00:00",
+                "Ship Date": "2016-03-05T00:00:00",
+                "Ship Mode": "Standard Class",
+                "Customer ID": "KD-16270",
+                "Customer Name": "Karen Daniels",
+                "Segment": "Consumer",
+                "Country": "United States",
+                "City": "Yonkers",
+                "State": "New York",
+                "Postal Code": 10701,
+                "Region": "East",
+                "Product ID": "TEC-MA-10003979",
+                "Category": "Technology",
+                "Sub-Category": "Machines",
+                "Product Name": "Ativa V4110Mdd Micro-Cut Shredder",
+                "Sales": 4899.93,
+                "Quantity": 7,
+                "Discount": 0,
+                "Profit": 2400.9657,
+                "z_score": 7.4931547722683725
+            },
+            {
+                "Row ID": 1156,
+                "Order ID": "CA-2014-136567",
+                "Order Date": "2014-12-20T00:00:00",
+                "Ship Date": "2014-12-21T00:00:00",
+                "Ship Mode": "First Class",
+                "Customer ID": "PS-19045",
+                "Customer Name": "Penelope Sewall",
+                "Segment": "Home Office",
+                "Country": "United States",
+                "City": "Harrisonburg",
+                "State": "Virginia",
+                "Postal Code": 22801,
+                "Region": "South",
+                "Product ID": "FUR-TA-10001932",
+                "Category": "Furniture",
+                "Sub-Category": "Tables",
+                "Product Name": "Chromcraft 48\" X 96\" Racetrack Double Pedestal Table",
+                "Sales": 2244.48,
+                "Quantity": 7,
+                "Discount": 0,
+                "Profit": 493.7856,
+                "z_score": 3.232471458700928
+            },
+            {
+                "Row ID": 1247,
+                "Order ID": "CA-2014-168494",
+                "Order Date": "2014-12-12T00:00:00",
+                "Ship Date": "2014-12-14T00:00:00",
+                "Ship Mode": "Second Class",
+                "Customer ID": "NP-18700",
+                "Customer Name": "Nora Preis",
+                "Segment": "Consumer",
+                "Country": "United States",
+                "City": "Fresno",
+                "State": "California",
+                "Postal Code": 93727,
+                "Region": "West",
+                "Product ID": "FUR-TA-10003473",
+                "Category": "Furniture",
+                "Sub-Category": "Tables",
+                "Product Name": "Bretford Rectangular Conference Table Tops",
+                "Sales": 3610.848,
+                "Quantity": 12,
+                "Discount": 0.2,
+                "Profit": 135.4068,
+                "z_score": 5.424816009640512
+            },
+            {
+                "Row ID": 1439,
+                "Order ID": "CA-2015-139731",
+                "Order Date": "2015-10-15T00:00:00",
+                "Ship Date": "2015-10-15T00:00:00",
+                "Ship Mode": "Same Day",
+                "Customer ID": "JE-15745",
+                "Customer Name": "Joel Eaton",
+                "Segment": "Consumer",
+                "Country": "United States",
+                "City": "Amarillo",
+                "State": "Texas",
+                "Postal Code": 79109,
+                "Region": "Central",
+                "Product ID": "FUR-CH-10002024",
+                "Category": "Furniture",
+                "Sub-Category": "Chairs",
+                "Product Name": "Hon 5400 Series Task Chairs For Big And Tall",
+                "Sales": 2453.43,
+                "Quantity": 5,
+                "Discount": 0.3,
+                "Profit": -350.49,
+                "z_score": 3.56773281868508
+            },
+            {
+                "Row ID": 1455,
+                "Order ID": "CA-2016-133711",
+                "Order Date": "2016-11-26T00:00:00",
+                "Ship Date": "2016-11-29T00:00:00",
+                "Ship Mode": "First Class",
+                "Customer ID": "MC-17425",
+                "Customer Name": "Mark Cousins",
+                "Segment": "Corporate",
+                "Country": "United States",
+                "City": "Mobile",
+                "State": "Alabama",
+                "Postal Code": 36608,
+                "Region": "South",
+                "Product ID": "TEC-MA-10000010",
+                "Category": "Technology",
+                "Sub-Category": "Machines",
+                "Product Name": "Hewlett-Packard Deskjet 3050A All-In-One Color Inkjet Printer",
+                "Sales": 3040,
+                "Quantity": 8,
+                "Discount": 0,
+                "Profit": 1459.2,
+                "z_score": 4.508887429481463
+            }
+        ]
+    }
+}
