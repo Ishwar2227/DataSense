@@ -78,6 +78,7 @@ Natural-language answers are generated using Groq.
 The LLM does not receive the raw CSV as its source of truth.
 Instead, DataSense follows this architecture:
 
+```text
 CSV Dataset
      ↓
 Data Cleaning
@@ -93,6 +94,7 @@ Relevant Statistics
 Groq LLM
      ↓
 Grounded Natural-Language Answer
+```
 
 The LLM is used to explain statistics that have already been calculated by the DataSense analysis engine.
 This helps reduce unsupported explanations and prevents the LLM from inventing data that is not present in the analysis.
@@ -139,7 +141,10 @@ Development
 - GitHub
 - Swagger / OpenAPI
 
+
 ## Project Structure
+
+```text
 DataSense/
 │
 ├── backend/
@@ -176,42 +181,54 @@ DataSense/
 │
 ├── .gitignore
 └── README.md
+```
 
+```markdown
 ## Running DataSense Locally
-1. Clone the repository
+### 1. Clone the repository
+```bash
 git clone https://github.com/Ishwar2227/DataSense.git
 cd DataSense
+```
 
-2. Backend Setup
+## 2. Backend Setup
 Create a virtual environment:
+```bash
 python -m venv .venv
 On Windows:
 .venv\Scripts\activate
 Install backend dependencies:
 pip install -r backend/requirements.txt
+```
 
-3. Configure Groq
+## 3. Configure Groq
 Create:
+```bash
 backend/.env
 Add:
 GROQ_API_KEY=your_groq_api_key_here
+```
 Do not commit this file.
 The repository's .gitignore already excludes .env files.
 
-4. Start the Backend
+## 4. Start the Backend
 From the project root:
+```bash
 cd backend
 uvicorn app.main:app --reload
+```
 The API will be available at:
 http://127.0.0.1:8000
 Swagger documentation:
 http://127.0.0.1:8000/docs
 
-5. Start the Frontend
+## 5. Start the Frontend
 Open another terminal:
+```bash
 cd frontend
 npm install
 npm run dev
+```
 Then open the local Vite URL shown in the terminal.
 
 ## Security
