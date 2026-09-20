@@ -1,3 +1,4 @@
+const API_URL = import.meta.env.VITE_API_URL || "http://127.0.0.1:8000";
 import { useRef, useState } from "react";
 import {
   Bar,
@@ -11,7 +12,6 @@ import {
   YAxis
 } from "recharts";
 import "./App.css";
-
 const Icon = ({ name, size = 18 }) => {
   const paths = {
     logo: (
@@ -250,7 +250,7 @@ function App() {
 
     try {
       const response = await fetch(
-        "http://127.0.0.1:8000/api/insights",
+        `${API_URL}/api/insights`,
         {
           method: "POST",
           body: formData
@@ -321,7 +321,7 @@ function App() {
 
     try {
       const response = await fetch(
-        "http://127.0.0.1:8000/api/question",
+        `${API_URL}/api/question`,
         {
           method: "POST",
           body: formData
