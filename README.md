@@ -450,7 +450,13 @@ When the uploaded dataset does not contain the information required for an analy
 ![alt text](image-5.png)
 
 ---
+## Demo
 
+A short walkthrough of DataSense, showing the complete workflow from CSV upload and analysis to the dashboard and Ask Data.
+
+[▶️ Watch the DataSense Demo](https://youtu.be/34KMxPOt8VU)
+
+---
 ## Known Limitations
 
 The current system has several intentional limitations:
