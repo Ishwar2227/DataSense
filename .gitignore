@@ -38,3 +38,5 @@ Thumbs.db
 sample_db/data.csv
 sample_db/data_full_test.csv
 sample_db/other datasets for testing/DMart_sample_data.csv
+# Local benchmark datasets
+sample_db/benchmark_datasets/

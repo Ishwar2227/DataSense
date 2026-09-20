@@ -1,0 +1,236 @@
+{
+  "datasets": {
+    "BigMart.csv": {
+      "expected_types": {
+        "Item_Identifier": "id",
+        "Item_Weight": "decimal",
+        "Item_Fat_Content": "category",
+        "Item_Visibility": "decimal",
+        "Item_Type": "category",
+        "Item_MRP": "currency",
+        "Outlet_Identifier": "id",
+        "Outlet_Size": "category",
+        "Outlet_Location_Type": "category",
+        "Outlet_Type": "category",
+        "Item_Outlet_Sales": "currency"
+      }
+    },
+
+    "data.csv": {
+      "expected_types": {
+        "InvoiceNo": "id",
+        "Quantity": "quantity",
+        "InvoiceDate": "date",
+        "UnitPrice": "currency",
+        "Country": "category"
+      }
+    },
+
+    "DataCoSupplyChainDataset.csv": {
+      "expected_types": {
+        "Type": "category",
+        "Days for shipping (real)": "quantity",
+        "Days for shipment (scheduled)": "quantity",
+        "Benefit per order": "currency",
+        "Sales per customer": "currency",
+        "Delivery Status": "category",
+        "Category Name": "category",
+        "Customer Country": "category",
+        "Customer Segment": "category",
+        "Market": "category",
+        "Order Country": "category",
+        "order date (DateOrders)": "date",
+        "Order Id": "id",
+        "Order Item Quantity": "quantity",
+        "Sales": "currency",
+        "Order Item Total": "currency",
+        "Order Region": "category",
+        "Order Status": "category",
+        "Product Name": "text",
+        "Product Price": "currency",
+        "shipping date (DateOrders)": "date",
+        "Shipping Mode": "category"
+      }
+    },
+
+    "DMart_sample_data.csv": {
+      "expected_types": {
+        "Date": "date",
+        "Time": "text",
+        "CustomerType": "category",
+        "ProductCategory": "category",
+        "UnitPrice": "currency",
+        "Quantity": "quantity",
+        "Total": "currency"
+      }
+    },
+
+    "E-Commerce DataSet.csv": {
+      "expected_types": {
+        "order_id": "id",
+        "order_date": "date",
+        "shipped_at": "date",
+        "prod_sku": "id",
+        "prod_qty": "quantity"
+      }
+    },
+
+    "events.csv": {
+      "expected_types": {
+        "timestamp": "date",
+        "visitorid": "id",
+        "event": "category",
+        "itemid": "id",
+        "transactionid": "id"
+      }
+    },
+
+    "olist_order_items_dataset.csv": {
+      "expected_types": {
+        "order_id": "id",
+        "order_item_id": "id",
+        "product_id": "id",
+        "seller_id": "id",
+        "shipping_limit_date": "date",
+        "price": "currency",
+        "freight_value": "currency"
+      }
+    },
+
+    "online_shoppers_purchasing_intention.csv": {
+      "expected_types": {
+        "Administrative": "quantity",
+        "Administrative_Duration": "decimal",
+        "Informational": "quantity",
+        "Informational_Duration": "decimal",
+        "ProductRelated": "quantity",
+        "ProductRelated_Duration": "decimal",
+        "BounceRates": "decimal",
+        "ExitRates": "decimal",
+        "PageValues": "decimal",
+        "SpecialDay": "decimal",
+        "Month": "category",
+        "VisitorType": "category",
+        "Weekend": "category",
+        "Revenue": "category"
+      }
+    },
+
+    "orders.csv": {
+      "expected_types": {
+        "order_id": "id",
+        "user_id": "id",
+        "eval_set": "category",
+        "order_number": "quantity",
+        "order_dow": "quantity",
+        "order_hour_of_day": "quantity",
+        "days_since_prior_order": "decimal"
+      }
+    },
+
+    "Shop Direct Sale Data For Research.csv": {
+      "expected_types": {
+        "Order ID": "id",
+        "Order Date": "date",
+        "City": "category",
+        "Country": "category",
+        "State": "category",
+        "Region": "category",
+        "Segment": "category",
+        "Category": "category",
+        "Ship Mode": "category",
+        "Sub-Category": "category",
+        "Quantity": "quantity",
+        "Cost": "currency",
+        "Profit": "currency",
+        "Sales": "currency"
+      }
+    },
+
+    "Stores.csv": {
+      "expected_types": {
+        "Store Number": "id",
+        "AreaStore": "decimal",
+        "Property": "category",
+        "Type": "category",
+        "Old/New": "category",
+        "Checkout Number": "quantity",
+        "Revenue": "currency"
+      }
+    },
+
+    "supermarket_sales - Sheet1.csv": {
+      "expected_types": {
+        "Invoice ID": "id",
+        "Branch": "category",
+        "City": "category",
+        "Customer type": "category",
+        "Gender": "category",
+        "Product line": "category",
+        "Unit price": "currency",
+        "Quantity": "quantity",
+        "Total": "currency",
+        "Date": "date",
+        "Time": "text",
+        "Payment": "category",
+        "cogs": "currency",
+        "gross income": "currency",
+        "Rating": "decimal"
+      }
+    },
+
+    "Superstore.csv": {
+      "expected_types": {
+        "Row ID": "id",
+        "Order ID": "id",
+        "Order Date": "date",
+        "Ship Date": "date",
+        "Ship Mode": "category",
+        "Customer ID": "id",
+        "Segment": "category",
+        "Country": "category",
+        "City": "category",
+        "State": "category",
+        "Region": "category",
+        "Product ID": "id",
+        "Category": "category",
+        "Sub-Category": "category",
+        "Sales": "currency",
+        "Quantity": "quantity",
+        "Discount": "decimal",
+        "Profit": "currency"
+      }
+    },
+
+    "train.csv": {
+      "expected_types": {
+        "Store": "id",
+        "DayOfWeek": "quantity",
+        "Date": "date",
+        "Sales": "currency",
+        "Customers": "quantity",
+        "Open": "category",
+        "Promo": "category",
+        "StateHoliday": "category",
+        "SchoolHoliday": "category"
+      }
+    },
+
+    "transaction_data.csv": {
+      "expected_types": {
+        "household_key": "id",
+        "BASKET_ID": "id",
+        "DAY": "quantity",
+        "PRODUCT_ID": "id",
+        "QUANTITY": "quantity",
+        "SALES_VALUE": "currency",
+        "STORE_ID": "id",
+        "RETAIL_DISC": "currency",
+        "TRANS_TIME": "quantity",
+        "WEEK_NO": "quantity",
+        "COUPON_DISC": "currency",
+        "COUPON_MATCH_DISC": "currency"
+      }
+    }
+  }
+}

@@ -510,6 +510,7 @@ def select_analysis_columns(
             r"\bdescription\b",
             r"\binvoice\b",
             r"\bstock\b",
+            r"\bsku\b",
         ]
 
         looks_like_identifier = any(

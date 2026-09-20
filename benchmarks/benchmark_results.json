@@ -1,0 +1,1691 @@
+{
+  "benchmark": "DataSense Phase 5",
+  "datasets": [
+    {
+      "dataset": "BigMart.csv",
+      "rows": 8523,
+      "columns": 12,
+      "file_size_mb": 0.83,
+      "runtime_seconds": 0.117,
+      "status": "valid",
+      "error": null,
+      "encoding_log": [],
+      "cleaning_changes": [
+        "Outlet_Type: Merged 'Supermarket Type2' into 'Supermarket Type1' (similarity: 0.94)",
+        "Outlet_Type: Merged 'Supermarket Type3' into 'Supermarket Type1' (similarity: 0.94)"
+      ],
+      "cleaning_change_count": 2,
+      "detected_types": {
+        "Item_Identifier": "id",
+        "Item_Weight": "decimal",
+        "Item_Fat_Content": "category",
+        "Item_Visibility": "decimal",
+        "Item_Type": "category",
+        "Item_MRP": "currency",
+        "Outlet_Identifier": "id",
+        "Outlet_Establishment_Year": "quantity",
+        "Outlet_Size": "category",
+        "Outlet_Location_Type": "category",
+        "Outlet_Type": "category",
+        "Item_Outlet_Sales": "currency"
+      },
+      "typing": {
+        "correct": 11,
+        "total": 11,
+        "accuracy_pct": 100.0,
+        "comparisons": [
+          {
+            "column": "Item_Identifier",
+            "expected": "id",
+            "detected": "id",
+            "status": "correct"
+          },
+          {
+            "column": "Item_Weight",
+            "expected": "decimal",
+            "detected": "decimal",
+            "status": "correct"
+          },
+          {
+            "column": "Item_Fat_Content",
+            "expected": "category",
+            "detected": "category",
+            "status": "correct"
+          },
+          {
+            "column": "Item_Visibility",
+            "expected": "decimal",
+            "detected": "decimal",
+            "status": "correct"
+          },
+          {
+            "column": "Item_Type",
+            "expected": "category",
+            "detected": "category",
+            "status": "correct"
+          },
+          {
+            "column": "Item_MRP",
+            "expected": "currency",
+            "detected": "currency",
+            "status": "correct"
+          },
+          {
+            "column": "Outlet_Identifier",
+            "expected": "id",
+            "detected": "id",
+            "status": "correct"
+          },
+          {
+            "column": "Outlet_Size",
+            "expected": "category",
+            "detected": "category",
+            "status": "correct"
+          },
+          {
+            "column": "Outlet_Location_Type",
+            "expected": "category",
+            "detected": "category",
+            "status": "correct"
+          },
+          {
+            "column": "Outlet_Type",
+            "expected": "category",
+            "detected": "category",
+            "status": "correct"
+          },
+          {
+            "column": "Item_Outlet_Sales",
+            "expected": "currency",
+            "detected": "currency",
+            "status": "correct"
+          }
+        ]
+      },
+      "selected_columns": {
+        "date_col": null,
+        "value_col": "Item_Outlet_Sales",
+        "group_col": "Outlet_Location_Type"
+      },
+      "question_availability": {
+        "why_change": false,
+        "top_group": false,
+        "anomalies": true
+      },
+      "unavailable_analyses": [
+        "Trend analysis unavailable: no suitable date column was found."
+      ]
+    },
+    {
+      "dataset": "data.csv",
+      "rows": 541909,
+      "columns": 8,
+      "file_size_mb": 43.47,
+      "runtime_seconds": 2.694,
+      "status": "valid",
+      "error": null,
+      "encoding_log": [
+        "Encoding detection failed, forced latin-1 as fallback (some characters may be imperfect)"
+      ],
+      "cleaning_changes": [],
+      "cleaning_change_count": 0,
+      "detected_types": {
+        "InvoiceNo": "id",
+        "StockCode": "id",
+        "Description": "text",
+        "Quantity": "quantity",
+        "InvoiceDate": "date",
+        "UnitPrice": "currency",
+        "CustomerID": "id",
+        "Country": "category"
+      },
+      "typing": {
+        "correct": 5,
+        "total": 5,
+        "accuracy_pct": 100.0,
+        "comparisons": [
+          {
+            "column": "InvoiceNo",
+            "expected": "id",
+            "detected": "id",
+            "status": "correct"
+          },
+          {
+            "column": "Quantity",
+            "expected": "quantity",
+            "detected": "quantity",
+            "status": "correct"
+          },
+          {
+            "column": "InvoiceDate",
+            "expected": "date",
+            "detected": "date",
+            "status": "correct"
+          },
+          {
+            "column": "UnitPrice",
+            "expected": "currency",
+            "detected": "currency",
+            "status": "correct"
+          },
+          {
+            "column": "Country",
+            "expected": "category",
+            "detected": "category",
+            "status": "correct"
+          }
+        ]
+      },
+      "selected_columns": {
+        "date_col": "InvoiceDate",
+        "value_col": "AnalysisValue",
+        "group_col": "Country"
+      },
+      "question_availability": {
+        "why_change": true,
+        "top_group": true,
+        "anomalies": true
+      },
+      "unavailable_analyses": []
+    },
+    {
+      "dataset": "DataCoSupplyChainDataset.csv",
+      "rows": 180519,
+      "columns": 53,
+      "file_size_mb": 91.47,
+      "runtime_seconds": 8.186,
+      "status": "valid",
+      "error": null,
+      "encoding_log": [
+        "Detected non-UTF-8 encoding (ISO-8859-1), converted automatically"
+      ],
+      "cleaning_changes": [
+        "Category Name: Merged 'Men'S Clothing' into 'Women'S Clothing' (similarity: 0.93)",
+        "Category Name: Merged 'Men'S Golf Clubs' into 'Women'S Golf Clubs' (similarity: 0.94)",
+        "Customer City: Skipped fuzzy matching (563 unique values, exceeds performance threshold)",
+        "Order City: Skipped fuzzy matching (3597 unique values, exceeds performance threshold)",
+        "Order Region: Merged 'East Of Usa' into 'West Of Usa' (similarity: 0.91)",
+        "Order Region: Merged 'East Africa' into 'West Africa' (similarity: 0.91)",
+        "Order Region: Merged 'Eastern Europe' into 'Western Europe' (similarity: 0.93)",
+        "Order State: Skipped fuzzy matching (1089 unique values, exceeds performance threshold)"
+      ],
+      "cleaning_change_count": 8,
+      "detected_types": {
+        "Type": "category",
+        "Days for shipping (real)": "quantity",
+        "Days for shipment (scheduled)": "quantity",
+        "Benefit per order": "currency",
+        "Sales per customer": "currency",
+        "Delivery Status": "category",
+        "Late_delivery_risk": "quantity",
+        "Category Id": "id",
+        "Category Name": "category",
+        "Customer City": "category",
+        "Customer Country": "category",
+        "Customer Email": "id",
+        "Customer Fname": "id",
+        "Customer Id": "id",
+        "Customer Lname": "id",
+        "Customer Password": "id",
+        "Customer Segment": "category",
+        "Customer State": "category",
+        "Customer Street": "text",
+        "Customer Zipcode": "quantity",
+        "Department Id": "id",
+        "Department Name": "id",
+        "Latitude": "decimal",
+        "Longitude": "decimal",
+        "Market": "category",
+        "Order City": "category",
+        "Order Country": "category",
+        "Order Customer Id": "id",
+        "order date (DateOrders)": "date",
+        "Order Id": "id",
+        "Order Item Cardprod Id": "id",
+        "Order Item Discount": "decimal",
+        "Order Item Discount Rate": "decimal",
+        "Order Item Id": "id",
+        "Order Item Product Price": "currency",
+        "Order Item Profit Ratio": "currency",
+        "Order Item Quantity": "quantity",
+        "Sales": "currency",
+        "Order Item Total": "currency",
+        "Order Profit Per Order": "currency",
+        "Order Region": "category",
+        "Order State": "category",
+        "Order Status": "category",
+        "Order Zipcode": "quantity",
+        "Product Card Id": "id",
+        "Product Category Id": "id",
+        "Product Description": "text",
+        "Product Image": "text",
+        "Product Name": "text",
+        "Product Price": "currency",
+        "Product Status": "category",
+        "shipping date (DateOrders)": "date",
+        "Shipping Mode": "category"
+      },
+      "typing": {
+        "correct": 22,
+        "total": 22,
+        "accuracy_pct": 100.0,
+        "comparisons": [
+          {
+            "column": "Type",
+            "expected": "category",
+            "detected": "category",
+            "status": "correct"
+          },
+          {
+            "column": "Days for shipping (real)",
+            "expected": "quantity",
+            "detected": "quantity",
+            "status": "correct"
+          },
+          {
+            "column": "Days for shipment (scheduled)",
+            "expected": "quantity",
+            "detected": "quantity",
+            "status": "correct"
+          },
+          {
+            "column": "Benefit per order",
+            "expected": "currency",
+            "detected": "currency",
+            "status": "correct"
+          },
+          {
+            "column": "Sales per customer",
+            "expected": "currency",
+            "detected": "currency",
+            "status": "correct"
+          },
+          {
+            "column": "Delivery Status",
+            "expected": "category",
+            "detected": "category",
+            "status": "correct"
+          },
+          {
+            "column": "Category Name",
+            "expected": "category",
+            "detected": "category",
+            "status": "correct"
+          },
+          {
+            "column": "Customer Country",
+            "expected": "category",
+            "detected": "category",
+            "status": "correct"
+          },
+          {
+            "column": "Customer Segment",
+            "expected": "category",
+            "detected": "category",
+            "status": "correct"
+          },
+          {
+            "column": "Market",
+            "expected": "category",
+            "detected": "category",
+            "status": "correct"
+          },
+          {
+            "column": "Order Country",
+            "expected": "category",
+            "detected": "category",
+            "status": "correct"
+          },
+          {
+            "column": "order date (DateOrders)",
+            "expected": "date",
+            "detected": "date",
+            "status": "correct"
+          },
+          {
+            "column": "Order Id",
+            "expected": "id",
+            "detected": "id",
+            "status": "correct"
+          },
+          {
+            "column": "Order Item Quantity",
+            "expected": "quantity",
+            "detected": "quantity",
+            "status": "correct"
+          },
+          {
+            "column": "Sales",
+            "expected": "currency",
+            "detected": "currency",
+            "status": "correct"
+          },
+          {
+            "column": "Order Item Total",
+            "expected": "currency",
+            "detected": "currency",
+            "status": "correct"
+          },
+          {
+            "column": "Order Region",
+            "expected": "category",
+            "detected": "category",
+            "status": "correct"
+          },
+          {
+            "column": "Order Status",
+            "expected": "category",
+            "detected": "category",
+            "status": "correct"
+          },
+          {
+            "column": "Product Name",
+            "expected": "text",
+            "detected": "text",
+            "status": "correct"
+          },
+          {
+            "column": "Product Price",
+            "expected": "currency",
+            "detected": "currency",
+            "status": "correct"
+          },
+          {
+            "column": "shipping date (DateOrders)",
+            "expected": "date",
+            "detected": "date",
+            "status": "correct"
+          },
+          {
+            "column": "Shipping Mode",
+            "expected": "category",
+            "detected": "category",
+            "status": "correct"
+          }
+        ]
+      },
+      "selected_columns": {
+        "date_col": "order date (DateOrders)",
+        "value_col": "Sales per customer",
+        "group_col": "Order Status"
+      },
+      "question_availability": {
+        "why_change": true,
+        "top_group": true,
+        "anomalies": true
+      },
+      "unavailable_analyses": []
+    },
+    {
+      "dataset": "DMart_sample_data.csv",
+      "rows": 1000000,
+      "columns": 8,
+      "file_size_mb": 72.92,
+      "runtime_seconds": 62.134,
+      "status": "valid",
+      "error": null,
+      "encoding_log": [],
+      "cleaning_changes": [],
+      "cleaning_change_count": 0,
+      "detected_types": {
+        "Date": "date",
+        "Time": "text",
+        "CustomerType": "category",
+        "ProductCategory": "category",
+        "UnitPrice": "currency",
+        "Quantity": "quantity",
+        "Total": "currency",
+        "FullName": "text"
+      },
+      "typing": {
+        "correct": 7,
+        "total": 7,
+        "accuracy_pct": 100.0,
+        "comparisons": [
+          {
+            "column": "Date",
+            "expected": "date",
+            "detected": "date",
+            "status": "correct"
+          },
+          {
+            "column": "Time",
+            "expected": "text",
+            "detected": "text",
+            "status": "correct"
+          },
+          {
+            "column": "CustomerType",
+            "expected": "category",
+            "detected": "category",
+            "status": "correct"
+          },
+          {
+            "column": "ProductCategory",
+            "expected": "category",
+            "detected": "category",
+            "status": "correct"
+          },
+          {
+            "column": "UnitPrice",
+            "expected": "currency",
+            "detected": "currency",
+            "status": "correct"
+          },
+          {
+            "column": "Quantity",
+            "expected": "quantity",
+            "detected": "quantity",
+            "status": "correct"
+          },
+          {
+            "column": "Total",
+            "expected": "currency",
+            "detected": "currency",
+            "status": "correct"
+          }
+        ]
+      },
+      "selected_columns": {
+        "date_col": "Date",
+        "value_col": "Total",
+        "group_col": "ProductCategory"
+      },
+      "question_availability": {
+        "why_change": true,
+        "top_group": true,
+        "anomalies": true
+      },
+      "unavailable_analyses": []
+    },
+    {
+      "dataset": "E-Commerce DataSet.csv",
+      "rows": 100000,
+      "columns": 6,
+      "file_size_mb": 9.21,
+      "runtime_seconds": 2.024,
+      "status": "valid",
+      "error": null,
+      "encoding_log": [],
+      "cleaning_changes": [],
+      "cleaning_change_count": 0,
+      "detected_types": {
+        "rec_id": "id",
+        "order_id": "text",
+        "order_date": "date",
+        "shipped_at": "date",
+        "prod_sku": "text",
+        "prod_qty": "quantity"
+      },
+      "typing": {
+        "correct": 3,
+        "total": 5,
+        "accuracy_pct": 60.0,
+        "comparisons": [
+          {
+            "column": "order_id",
+            "expected": "id",
+            "detected": "text",
+            "status": "incorrect"
+          },
+          {
+            "column": "order_date",
+            "expected": "date",
+            "detected": "date",
+            "status": "correct"
+          },
+          {
+            "column": "shipped_at",
+            "expected": "date",
+            "detected": "date",
+            "status": "correct"
+          },
+          {
+            "column": "prod_sku",
+            "expected": "id",
+            "detected": "text",
+            "status": "incorrect"
+          },
+          {
+            "column": "prod_qty",
+            "expected": "quantity",
+            "detected": "quantity",
+            "status": "correct"
+          }
+        ]
+      },
+      "selected_columns": {
+        "date_col": "order_date",
+        "value_col": "prod_qty",
+        "group_col": null
+      },
+      "question_availability": {
+        "why_change": true,
+        "top_group": false,
+        "anomalies": true
+      },
+      "unavailable_analyses": [
+        "Group analysis unavailable: no suitable categorical grouping column was found."
+      ]
+    },
+    {
+      "dataset": "events.csv",
+      "rows": 2756101,
+      "columns": 5,
+      "file_size_mb": 89.87,
+      "runtime_seconds": 38.357,
+      "status": "insufficient_data",
+      "error": null,
+      "encoding_log": [],
+      "cleaning_changes": [],
+      "cleaning_change_count": 0,
+      "detected_types": {
+        "timestamp": "date",
+        "visitorid": "id",
+        "event": "category",
+        "itemid": "id",
+        "transactionid": "id"
+      },
+      "typing": {
+        "correct": 5,
+        "total": 5,
+        "accuracy_pct": 100.0,
+        "comparisons": [
+          {
+            "column": "timestamp",
+            "expected": "date",
+            "detected": "date",
+            "status": "correct"
+          },
+          {
+            "column": "visitorid",
+            "expected": "id",
+            "detected": "id",
+            "status": "correct"
+          },
+          {
+            "column": "event",
+            "expected": "category",
+            "detected": "category",
+            "status": "correct"
+          },
+          {
+            "column": "itemid",
+            "expected": "id",
+            "detected": "id",
+            "status": "correct"
+          },
+          {
+            "column": "transactionid",
+            "expected": "id",
+            "detected": "id",
+            "status": "correct"
+          }
+        ]
+      },
+      "selected_columns": {
+        "date_col": "timestamp",
+        "value_col": null,
+        "group_col": null
+      },
+      "question_availability": {
+        "why_change": false,
+        "top_group": false,
+        "anomalies": false
+      },
+      "unavailable_analyses": []
+    },
+    {
+      "dataset": "olist_order_items_dataset.csv",
+      "rows": 112650,
+      "columns": 7,
+      "file_size_mb": 14.72,
+      "runtime_seconds": 0.725,
+      "status": "valid",
+      "error": null,
+      "encoding_log": [],
+      "cleaning_changes": [],
+      "cleaning_change_count": 0,
+      "detected_types": {
+        "order_id": "id",
+        "order_item_id": "id",
+        "product_id": "id",
+        "seller_id": "id",
+        "shipping_limit_date": "date",
+        "price": "currency",
+        "freight_value": "currency"
+      },
+      "typing": {
+        "correct": 7,
+        "total": 7,
+        "accuracy_pct": 100.0,
+        "comparisons": [
+          {
+            "column": "order_id",
+            "expected": "id",
+            "detected": "id",
+            "status": "correct"
+          },
+          {
+            "column": "order_item_id",
+            "expected": "id",
+            "detected": "id",
+            "status": "correct"
+          },
+          {
+            "column": "product_id",
+            "expected": "id",
+            "detected": "id",
+            "status": "correct"
+          },
+          {
+            "column": "seller_id",
+            "expected": "id",
+            "detected": "id",
+            "status": "correct"
+          },
+          {
+            "column": "shipping_limit_date",
+            "expected": "date",
+            "detected": "date",
+            "status": "correct"
+          },
+          {
+            "column": "price",
+            "expected": "currency",
+            "detected": "currency",
+            "status": "correct"
+          },
+          {
+            "column": "freight_value",
+            "expected": "currency",
+            "detected": "currency",
+            "status": "correct"
+          }
+        ]
+      },
+      "selected_columns": {
+        "date_col": "shipping_limit_date",
+        "value_col": "freight_value",
+        "group_col": null
+      },
+      "question_availability": {
+        "why_change": true,
+        "top_group": false,
+        "anomalies": true
+      },
+      "unavailable_analyses": [
+        "Group analysis unavailable: no suitable categorical grouping column was found."
+      ]
+    },
+    {
+      "dataset": "online_shoppers_purchasing_intention.csv",
+      "rows": 12330,
+      "columns": 18,
+      "file_size_mb": 1.12,
+      "runtime_seconds": 0.162,
+      "status": "valid",
+      "error": null,
+      "encoding_log": [],
+      "cleaning_changes": [],
+      "cleaning_change_count": 0,
+      "detected_types": {
+        "Administrative": "quantity",
+        "Administrative_Duration": "quantity",
+        "Informational": "quantity",
+        "Informational_Duration": "quantity",
+        "ProductRelated": "quantity",
+        "ProductRelated_Duration": "decimal",
+        "BounceRates": "decimal",
+        "ExitRates": "decimal",
+        "PageValues": "quantity",
+        "SpecialDay": "quantity",
+        "Month": "category",
+        "OperatingSystems": "quantity",
+        "Browser": "quantity",
+        "Region": "category",
+        "TrafficType": "category",
+        "VisitorType": "category",
+        "Weekend": "category",
+        "Revenue": "text"
+      },
+      "typing": {
+        "correct": 9,
+        "total": 14,
+        "accuracy_pct": 64.29,
+        "comparisons": [
+          {
+            "column": "Administrative",
+            "expected": "quantity",
+            "detected": "quantity",
+            "status": "correct"
+          },
+          {
+            "column": "Administrative_Duration",
+            "expected": "decimal",
+            "detected": "quantity",
+            "status": "incorrect"
+          },
+          {
+            "column": "Informational",
+            "expected": "quantity",
+            "detected": "quantity",
+            "status": "correct"
+          },
+          {
+            "column": "Informational_Duration",
+            "expected": "decimal",
+            "detected": "quantity",
+            "status": "incorrect"
+          },
+          {
+            "column": "ProductRelated",
+            "expected": "quantity",
+            "detected": "quantity",
+            "status": "correct"
+          },
+          {
+            "column": "ProductRelated_Duration",
+            "expected": "decimal",
+            "detected": "decimal",
+            "status": "correct"
+          },
+          {
+            "column": "BounceRates",
+            "expected": "decimal",
+            "detected": "decimal",
+            "status": "correct"
+          },
+          {
+            "column": "ExitRates",
+            "expected": "decimal",
+            "detected": "decimal",
+            "status": "correct"
+          },
+          {
+            "column": "PageValues",
+            "expected": "decimal",
+            "detected": "quantity",
+            "status": "incorrect"
+          },
+          {
+            "column": "SpecialDay",
+            "expected": "decimal",
+            "detected": "quantity",
+            "status": "incorrect"
+          },
+          {
+            "column": "Month",
+            "expected": "category",
+            "detected": "category",
+            "status": "correct"
+          },
+          {
+            "column": "VisitorType",
+            "expected": "category",
+            "detected": "category",
+            "status": "correct"
+          },
+          {
+            "column": "Weekend",
+            "expected": "category",
+            "detected": "category",
+            "status": "correct"
+          },
+          {
+            "column": "Revenue",
+            "expected": "category",
+            "detected": "text",
+            "status": "incorrect"
+          }
+        ]
+      },
+      "selected_columns": {
+        "date_col": null,
+        "value_col": "ProductRelated_Duration",
+        "group_col": "Region"
+      },
+      "question_availability": {
+        "why_change": false,
+        "top_group": false,
+        "anomalies": true
+      },
+      "unavailable_analyses": [
+        "Trend analysis unavailable: no suitable date column was found."
+      ]
+    },
+    {
+      "dataset": "orders.csv",
+      "rows": 3421083,
+      "columns": 7,
+      "file_size_mb": 103.92,
+      "runtime_seconds": 2.677,
+      "status": "valid",
+      "error": null,
+      "encoding_log": [],
+      "cleaning_changes": [],
+      "cleaning_change_count": 0,
+      "detected_types": {
+        "order_id": "id",
+        "user_id": "id",
+        "eval_set": "id",
+        "order_number": "id",
+        "order_dow": "quantity",
+        "order_hour_of_day": "quantity",
+        "days_since_prior_order": "quantity"
+      },
+      "typing": {
+        "correct": 4,
+        "total": 7,
+        "accuracy_pct": 57.14,
+        "comparisons": [
+          {
+            "column": "order_id",
+            "expected": "id",
+            "detected": "id",
+            "status": "correct"
+          },
+          {
+            "column": "user_id",
+            "expected": "id",
+            "detected": "id",
+            "status": "correct"
+          },
+          {
+            "column": "eval_set",
+            "expected": "category",
+            "detected": "id",
+            "status": "incorrect"
+          },
+          {
+            "column": "order_number",
+            "expected": "quantity",
+            "detected": "id",
+            "status": "incorrect"
+          },
+          {
+            "column": "order_dow",
+            "expected": "quantity",
+            "detected": "quantity",
+            "status": "correct"
+          },
+          {
+            "column": "order_hour_of_day",
+            "expected": "quantity",
+            "detected": "quantity",
+            "status": "correct"
+          },
+          {
+            "column": "days_since_prior_order",
+            "expected": "decimal",
+            "detected": "quantity",
+            "status": "incorrect"
+          }
+        ]
+      },
+      "selected_columns": {
+        "date_col": null,
+        "value_col": "days_since_prior_order",
+        "group_col": null
+      },
+      "question_availability": {
+        "why_change": false,
+        "top_group": false,
+        "anomalies": true
+      },
+      "unavailable_analyses": [
+        "Trend analysis unavailable: no suitable date column was found.",
+        "Group analysis unavailable: no suitable categorical grouping column was found."
+      ]
+    },
+    {
+      "dataset": "Shop Direct Sale Data For Research.csv",
+      "rows": 4115,
+      "columns": 16,
+      "file_size_mb": 0.6,
+      "runtime_seconds": 0.307,
+      "status": "valid",
+      "error": null,
+      "encoding_log": [],
+      "cleaning_changes": [
+        "City: Skipped fuzzy matching (999 unique values, exceeds performance threshold)",
+        "State: Merged 'West Flanders' into 'East Flanders' (similarity: 0.92)"
+      ],
+      "cleaning_change_count": 2,
+      "detected_types": {
+        "Order ID": "id",
+        "Order Date": "date",
+        "Customer Name": "text",
+        "City": "category",
+        "Country": "category",
+        "State": "category",
+        "Region": "category",
+        "Segment": "category",
+        "Category": "category",
+        "Ship Mode": "category",
+        "Sub-Category": "category",
+        "Product Name": "text",
+        "Quantity": "quantity",
+        "Cost": "currency",
+        "Profit": "currency",
+        "Sales": "currency"
+      },
+      "typing": {
+        "correct": 14,
+        "total": 14,
+        "accuracy_pct": 100.0,
+        "comparisons": [
+          {
+            "column": "Order ID",
+            "expected": "id",
+            "detected": "id",
+            "status": "correct"
+          },
+          {
+            "column": "Order Date",
+            "expected": "date",
+            "detected": "date",
+            "status": "correct"
+          },
+          {
+            "column": "City",
+            "expected": "category",
+            "detected": "category",
+            "status": "correct"
+          },
+          {
+            "column": "Country",
+            "expected": "category",
+            "detected": "category",
+            "status": "correct"
+          },
+          {
+            "column": "State",
+            "expected": "category",
+            "detected": "category",
+            "status": "correct"
+          },
+          {
+            "column": "Region",
+            "expected": "category",
+            "detected": "category",
+            "status": "correct"
+          },
+          {
+            "column": "Segment",
+            "expected": "category",
+            "detected": "category",
+            "status": "correct"
+          },
+          {
+            "column": "Category",
+            "expected": "category",
+            "detected": "category",
+            "status": "correct"
+          },
+          {
+            "column": "Ship Mode",
+            "expected": "category",
+            "detected": "category",
+            "status": "correct"
+          },
+          {
+            "column": "Sub-Category",
+            "expected": "category",
+            "detected": "category",
+            "status": "correct"
+          },
+          {
+            "column": "Quantity",
+            "expected": "quantity",
+            "detected": "quantity",
+            "status": "correct"
+          },
+          {
+            "column": "Cost",
+            "expected": "currency",
+            "detected": "currency",
+            "status": "correct"
+          },
+          {
+            "column": "Profit",
+            "expected": "currency",
+            "detected": "currency",
+            "status": "correct"
+          },
+          {
+            "column": "Sales",
+            "expected": "currency",
+            "detected": "currency",
+            "status": "correct"
+          }
+        ]
+      },
+      "selected_columns": {
+        "date_col": "Order Date",
+        "value_col": "Sales",
+        "group_col": "Country"
+      },
+      "question_availability": {
+        "why_change": true,
+        "top_group": true,
+        "anomalies": true
+      },
+      "unavailable_analyses": []
+    },
+    {
+      "dataset": "Stores.csv",
+      "rows": 118,
+      "columns": 7,
+      "file_size_mb": 0.0,
+      "runtime_seconds": 0.036,
+      "status": "valid",
+      "error": null,
+      "encoding_log": [],
+      "cleaning_changes": [],
+      "cleaning_change_count": 0,
+      "detected_types": {
+        "Store Number": "id",
+        "AreaStore": "quantity",
+        "Property": "category",
+        "Type": "category",
+        "Old/New": "category",
+        "Checkout Number": "id",
+        "Revenue": "currency"
+      },
+      "typing": {
+        "correct": 5,
+        "total": 7,
+        "accuracy_pct": 71.43,
+        "comparisons": [
+          {
+            "column": "Store Number",
+            "expected": "id",
+            "detected": "id",
+            "status": "correct"
+          },
+          {
+            "column": "AreaStore",
+            "expected": "decimal",
+            "detected": "quantity",
+            "status": "incorrect"
+          },
+          {
+            "column": "Property",
+            "expected": "category",
+            "detected": "category",
+            "status": "correct"
+          },
+          {
+            "column": "Type",
+            "expected": "category",
+            "detected": "category",
+            "status": "correct"
+          },
+          {
+            "column": "Old/New",
+            "expected": "category",
+            "detected": "category",
+            "status": "correct"
+          },
+          {
+            "column": "Checkout Number",
+            "expected": "quantity",
+            "detected": "id",
+            "status": "incorrect"
+          },
+          {
+            "column": "Revenue",
+            "expected": "currency",
+            "detected": "currency",
+            "status": "correct"
+          }
+        ]
+      },
+      "selected_columns": {
+        "date_col": null,
+        "value_col": "Revenue",
+        "group_col": "Property"
+      },
+      "question_availability": {
+        "why_change": false,
+        "top_group": false,
+        "anomalies": true
+      },
+      "unavailable_analyses": [
+        "Trend analysis unavailable: no suitable date column was found."
+      ]
+    },
+    {
+      "dataset": "supermarket_sales - Sheet1.csv",
+      "rows": 1000,
+      "columns": 17,
+      "file_size_mb": 0.13,
+      "runtime_seconds": 0.118,
+      "status": "valid",
+      "error": null,
+      "encoding_log": [],
+      "cleaning_changes": [],
+      "cleaning_change_count": 0,
+      "detected_types": {
+        "Invoice ID": "id",
+        "Branch": "category",
+        "City": "category",
+        "Customer type": "category",
+        "Gender": "category",
+        "Product line": "category",
+        "Unit price": "currency",
+        "Quantity": "quantity",
+        "Tax 5%": "decimal",
+        "Total": "currency",
+        "Date": "date",
+        "Time": "text",
+        "Payment": "category",
+        "cogs": "currency",
+        "gross margin percentage": "decimal",
+        "gross income": "currency",
+        "Rating": "decimal"
+      },
+      "typing": {
+        "correct": 15,
+        "total": 15,
+        "accuracy_pct": 100.0,
+        "comparisons": [
+          {
+            "column": "Invoice ID",
+            "expected": "id",
+            "detected": "id",
+            "status": "correct"
+          },
+          {
+            "column": "Branch",
+            "expected": "category",
+            "detected": "category",
+            "status": "correct"
+          },
+          {
+            "column": "City",
+            "expected": "category",
+            "detected": "category",
+            "status": "correct"
+          },
+          {
+            "column": "Customer type",
+            "expected": "category",
+            "detected": "category",
+            "status": "correct"
+          },
+          {
+            "column": "Gender",
+            "expected": "category",
+            "detected": "category",
+            "status": "correct"
+          },
+          {
+            "column": "Product line",
+            "expected": "category",
+            "detected": "category",
+            "status": "correct"
+          },
+          {
+            "column": "Unit price",
+            "expected": "currency",
+            "detected": "currency",
+            "status": "correct"
+          },
+          {
+            "column": "Quantity",
+            "expected": "quantity",
+            "detected": "quantity",
+            "status": "correct"
+          },
+          {
+            "column": "Total",
+            "expected": "currency",
+            "detected": "currency",
+            "status": "correct"
+          },
+          {
+            "column": "Date",
+            "expected": "date",
+            "detected": "date",
+            "status": "correct"
+          },
+          {
+            "column": "Time",
+            "expected": "text",
+            "detected": "text",
+            "status": "correct"
+          },
+          {
+            "column": "Payment",
+            "expected": "category",
+            "detected": "category",
+            "status": "correct"
+          },
+          {
+            "column": "cogs",
+            "expected": "currency",
+            "detected": "currency",
+            "status": "correct"
+          },
+          {
+            "column": "gross income",
+            "expected": "currency",
+            "detected": "currency",
+            "status": "correct"
+          },
+          {
+            "column": "Rating",
+            "expected": "decimal",
+            "detected": "decimal",
+            "status": "correct"
+          }
+        ]
+      },
+      "selected_columns": {
+        "date_col": "Date",
+        "value_col": "Total",
+        "group_col": "City"
+      },
+      "question_availability": {
+        "why_change": true,
+        "top_group": true,
+        "anomalies": true
+      },
+      "unavailable_analyses": []
+    },
+    {
+      "dataset": "Superstore.csv",
+      "rows": 9994,
+      "columns": 21,
+      "file_size_mb": 2.18,
+      "runtime_seconds": 2.402,
+      "status": "valid",
+      "error": null,
+      "encoding_log": [
+        "Detected non-UTF-8 encoding (Windows-1252), converted automatically"
+      ],
+      "cleaning_changes": [
+        "Customer Name: Skipped fuzzy matching (793 unique values, exceeds performance threshold)",
+        "City: Skipped fuzzy matching (531 unique values, exceeds performance threshold)"
+      ],
+      "cleaning_change_count": 2,
+      "detected_types": {
+        "Row ID": "id",
+        "Order ID": "id",
+        "Order Date": "date",
+        "Ship Date": "date",
+        "Ship Mode": "category",
+        "Customer ID": "id",
+        "Customer Name": "category",
+        "Segment": "category",
+        "Country": "category",
+        "City": "category",
+        "State": "category",
+        "Postal Code": "id",
+        "Region": "category",
+        "Product ID": "id",
+        "Category": "category",
+        "Sub-Category": "category",
+        "Product Name": "text",
+        "Sales": "currency",
+        "Quantity": "quantity",
+        "Discount": "decimal",
+        "Profit": "currency"
+      },
+      "typing": {
+        "correct": 18,
+        "total": 18,
+        "accuracy_pct": 100.0,
+        "comparisons": [
+          {
+            "column": "Row ID",
+            "expected": "id",
+            "detected": "id",
+            "status": "correct"
+          },
+          {
+            "column": "Order ID",
+            "expected": "id",
+            "detected": "id",
+            "status": "correct"
+          },
+          {
+            "column": "Order Date",
+            "expected": "date",
+            "detected": "date",
+            "status": "correct"
+          },
+          {
+            "column": "Ship Date",
+            "expected": "date",
+            "detected": "date",
+            "status": "correct"
+          },
+          {
+            "column": "Ship Mode",
+            "expected": "category",
+            "detected": "category",
+            "status": "correct"
+          },
+          {
+            "column": "Customer ID",
+            "expected": "id",
+            "detected": "id",
+            "status": "correct"
+          },
+          {
+            "column": "Segment",
+            "expected": "category",
+            "detected": "category",
+            "status": "correct"
+          },
+          {
+            "column": "Country",
+            "expected": "category",
+            "detected": "category",
+            "status": "correct"
+          },
+          {
+            "column": "City",
+            "expected": "category",
+            "detected": "category",
+            "status": "correct"
+          },
+          {
+            "column": "State",
+            "expected": "category",
+            "detected": "category",
+            "status": "correct"
+          },
+          {
+            "column": "Region",
+            "expected": "category",
+            "detected": "category",
+            "status": "correct"
+          },
+          {
+            "column": "Product ID",
+            "expected": "id",
+            "detected": "id",
+            "status": "correct"
+          },
+          {
+            "column": "Category",
+            "expected": "category",
+            "detected": "category",
+            "status": "correct"
+          },
+          {
+            "column": "Sub-Category",
+            "expected": "category",
+            "detected": "category",
+            "status": "correct"
+          },
+          {
+            "column": "Sales",
+            "expected": "currency",
+            "detected": "currency",
+            "status": "correct"
+          },
+          {
+            "column": "Quantity",
+            "expected": "quantity",
+            "detected": "quantity",
+            "status": "correct"
+          },
+          {
+            "column": "Discount",
+            "expected": "decimal",
+            "detected": "decimal",
+            "status": "correct"
+          },
+          {
+            "column": "Profit",
+            "expected": "currency",
+            "detected": "currency",
+            "status": "correct"
+          }
+        ]
+      },
+      "selected_columns": {
+        "date_col": "Order Date",
+        "value_col": "Sales",
+        "group_col": "Region"
+      },
+      "question_availability": {
+        "why_change": true,
+        "top_group": true,
+        "anomalies": true
+      },
+      "unavailable_analyses": []
+    },
+    {
+      "dataset": "train.csv",
+      "rows": 1017209,
+      "columns": 9,
+      "file_size_mb": 36.29,
+      "runtime_seconds": 4.375,
+      "status": "valid",
+      "error": null,
+      "encoding_log": [],
+      "cleaning_changes": [],
+      "cleaning_change_count": 0,
+      "detected_types": {
+        "Store": "quantity",
+        "DayOfWeek": "quantity",
+        "Date": "date",
+        "Sales": "currency",
+        "Customers": "quantity",
+        "Open": "category",
+        "Promo": "category",
+        "StateHoliday": "category",
+        "SchoolHoliday": "quantity"
+      },
+      "typing": {
+        "correct": 7,
+        "total": 9,
+        "accuracy_pct": 77.78,
+        "comparisons": [
+          {
+            "column": "Store",
+            "expected": "id",
+            "detected": "quantity",
+            "status": "incorrect"
+          },
+          {
+            "column": "DayOfWeek",
+            "expected": "quantity",
+            "detected": "quantity",
+            "status": "correct"
+          },
+          {
+            "column": "Date",
+            "expected": "date",
+            "detected": "date",
+            "status": "correct"
+          },
+          {
+            "column": "Sales",
+            "expected": "currency",
+            "detected": "currency",
+            "status": "correct"
+          },
+          {
+            "column": "Customers",
+            "expected": "quantity",
+            "detected": "quantity",
+            "status": "correct"
+          },
+          {
+            "column": "Open",
+            "expected": "category",
+            "detected": "category",
+            "status": "correct"
+          },
+          {
+            "column": "Promo",
+            "expected": "category",
+            "detected": "category",
+            "status": "correct"
+          },
+          {
+            "column": "StateHoliday",
+            "expected": "category",
+            "detected": "category",
+            "status": "correct"
+          },
+          {
+            "column": "SchoolHoliday",
+            "expected": "category",
+            "detected": "quantity",
+            "status": "incorrect"
+          }
+        ]
+      },
+      "selected_columns": {
+        "date_col": "Date",
+        "value_col": "Sales",
+        "group_col": "StateHoliday"
+      },
+      "question_availability": {
+        "why_change": true,
+        "top_group": true,
+        "anomalies": true
+      },
+      "unavailable_analyses": []
+    },
+    {
+      "dataset": "transaction_data.csv",
+      "rows": 2595732,
+      "columns": 12,
+      "file_size_mb": 135.18,
+      "runtime_seconds": 3.587,
+      "status": "valid",
+      "error": null,
+      "encoding_log": [],
+      "cleaning_changes": [],
+      "cleaning_change_count": 0,
+      "detected_types": {
+        "household_key": "id",
+        "BASKET_ID": "id",
+        "DAY": "quantity",
+        "PRODUCT_ID": "id",
+        "QUANTITY": "quantity",
+        "SALES_VALUE": "currency",
+        "STORE_ID": "id",
+        "RETAIL_DISC": "decimal",
+        "TRANS_TIME": "quantity",
+        "WEEK_NO": "id",
+        "COUPON_DISC": "quantity",
+        "COUPON_MATCH_DISC": "quantity"
+      },
+      "typing": {
+        "correct": 8,
+        "total": 12,
+        "accuracy_pct": 66.67,
+        "comparisons": [
+          {
+            "column": "household_key",
+            "expected": "id",
+            "detected": "id",
+            "status": "correct"
+          },
+          {
+            "column": "BASKET_ID",
+            "expected": "id",
+            "detected": "id",
+            "status": "correct"
+          },
+          {
+            "column": "DAY",
+            "expected": "quantity",
+            "detected": "quantity",
+            "status": "correct"
+          },
+          {
+            "column": "PRODUCT_ID",
+            "expected": "id",
+            "detected": "id",
+            "status": "correct"
+          },
+          {
+            "column": "QUANTITY",
+            "expected": "quantity",
+            "detected": "quantity",
+            "status": "correct"
+          },
+          {
+            "column": "SALES_VALUE",
+            "expected": "currency",
+            "detected": "currency",
+            "status": "correct"
+          },
+          {
+            "column": "STORE_ID",
+            "expected": "id",
+            "detected": "id",
+            "status": "correct"
+          },
+          {
+            "column": "RETAIL_DISC",
+            "expected": "currency",
+            "detected": "decimal",
+            "status": "incorrect"
+          },
+          {
+            "column": "TRANS_TIME",
+            "expected": "quantity",
+            "detected": "quantity",
+            "status": "correct"
+          },
+          {
+            "column": "WEEK_NO",
+            "expected": "quantity",
+            "detected": "id",
+            "status": "incorrect"
+          },
+          {
+            "column": "COUPON_DISC",
+            "expected": "currency",
+            "detected": "quantity",
+            "status": "incorrect"
+          },
+          {
+            "column": "COUPON_MATCH_DISC",
+            "expected": "currency",
+            "detected": "quantity",
+            "status": "incorrect"
+          }
+        ]
+      },
+      "selected_columns": {
+        "date_col": null,
+        "value_col": "SALES_VALUE",
+        "group_col": null
+      },
+      "question_availability": {
+        "why_change": false,
+        "top_group": false,
+        "anomalies": true
+      },
+      "unavailable_analyses": [
+        "Trend analysis unavailable: no suitable date column was found.",
+        "Group analysis unavailable: no suitable categorical grouping column was found."
+      ]
+    }
+  ],
+  "summary": {
+    "datasets_evaluated": 15,
+    "valid_insights": 14,
+    "insufficient_data": 1,
+    "pipeline_errors": 0,
+    "typing_correct": 140,
+    "typing_total": 158,
+    "overall_typing_accuracy_pct": 88.61,
+    "datasets_with_cleaning_changes": 4,
+    "total_cleaning_changes_logged": 14,
+    "average_runtime_seconds": 8.527
+  }
+}

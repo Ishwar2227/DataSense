@@ -1,0 +1,19 @@
+dataset,column,expected,detected
+E-Commerce DataSet.csv,order_id,id,text
+E-Commerce DataSet.csv,prod_sku,id,text
+online_shoppers_purchasing_intention.csv,Administrative_Duration,decimal,quantity
+online_shoppers_purchasing_intention.csv,Informational_Duration,decimal,quantity
+online_shoppers_purchasing_intention.csv,PageValues,decimal,quantity
+online_shoppers_purchasing_intention.csv,SpecialDay,decimal,quantity
+online_shoppers_purchasing_intention.csv,Revenue,category,text
+orders.csv,eval_set,category,id
+orders.csv,order_number,quantity,id
+orders.csv,days_since_prior_order,decimal,quantity
+Stores.csv,AreaStore,decimal,quantity
+Stores.csv,Checkout Number,quantity,id
+train.csv,Store,id,quantity
+train.csv,SchoolHoliday,category,quantity
+transaction_data.csv,RETAIL_DISC,currency,decimal
+transaction_data.csv,WEEK_NO,quantity,id
+transaction_data.csv,COUPON_DISC,currency,quantity
+transaction_data.csv,COUPON_MATCH_DISC,currency,quantity

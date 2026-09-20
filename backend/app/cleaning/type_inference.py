@@ -104,10 +104,19 @@ NAME_HINTS = {
         "code",
         "number",
         "no",
-        "invoice",
-        "order",
+        "invoice id",
+        "order id",
         "customer id",
         "product id",
+        "item id",
+        "transaction id",
+        "visitor id",
+        "visitorid",
+        "itemid",
+        "transactionid",
+        "household key",
+        "basket id",
+        "store id",
         "postal code",
         "postcode",
         "zip",
@@ -117,10 +126,8 @@ NAME_HINTS = {
 
     "date": [
         "date",
-        "time",
         "timestamp",
         "datetime",
-        "year",
     ],
 
     "currency": [
@@ -136,6 +143,10 @@ NAME_HINTS = {
         "income",
         "expense",
         "fee",
+        "mrp",
+        "benefit",
+        "freight",
+        "cogs",
     ],
 
     "decimal": [
@@ -148,6 +159,7 @@ NAME_HINTS = {
         "score",
         "viewership",
         "rating",
+        "duration",
     ],
 
     "category": [
@@ -162,6 +174,19 @@ NAME_HINTS = {
         "gender",
         "class",
         "group",
+        "event",
+        "market",
+        "month",
+        "outlet size",
+        "property",
+        "old new",
+        "ship mode",
+        "branch",
+        "open",
+        "promo",
+        "stateholiday",
+        "visitor type",
+        "weekend",
     ],
 }
 
@@ -794,13 +819,13 @@ def detect_column_type(
     ):
         return "currency"
 
-        # ---------------------------------------------------------------
-        # 3. IDENTIFIER
-        # ---------------------------------------------------------------
+    # ---------------------------------------------------------------
+    # 3. IDENTIFIER
+    # ---------------------------------------------------------------
 
-        identifier_ratio = _looks_identifier_like(
-            sample
-        )
+    identifier_ratio = _looks_identifier_like(
+        sample
+    )
 
         # ---------------------------------------------------------------
         # IMPORTANT:
@@ -827,7 +852,7 @@ def detect_column_type(
         # categories.
         # ---------------------------------------------------------------
 
-        if (
+    if (
             name_hint == "category"
             and not pd.api.types.is_numeric_dtype(series)
         ):
@@ -847,7 +872,7 @@ def detect_column_type(
         # These should remain IDs.
         # ---------------------------------------------------------------
 
-        if (
+    if (
             name_hint == "id"
             and identifier_ratio >= 0.60
         ):
@@ -861,7 +886,7 @@ def detect_column_type(
         # categorical semantic hint.
         # ---------------------------------------------------------------
 
-        if (
+    if (
             identifier_ratio >= 0.90
             and not pd.api.types.is_numeric_dtype(series)
         ):
@@ -877,20 +902,40 @@ def detect_column_type(
         )
     )
 
-    if _looks_category_like(
-        sample,
-        sample_unique
-    ):
+    # Strong semantic category names should also work for
+    # numeric categorical columns such as:
+    #
+    #     Open
+    #     Promo
+    #     StateHoliday
+    #
+    # Example:
+    #     Open = 0 / 1
+    #
+    # These are categories, not quantities.
+
+    if name_hint == "category":
         return "category"
 
-    # A column called Region/Country/Type/etc. is a useful hint.
+    # Generic category detection is only safe for
+    # non-numeric data.
     #
-    # But only use this for non-numeric data.
-    if (
-        name_hint == "category"
-        and not numeric.notna().all()
-    ):
-        return "category"
+    # This prevents columns such as:
+    #
+    #     Quantity
+    #     Days for shipping
+    #     Order DOW
+    #
+    # from becoming "category" simply because their
+    # first 20 values contain only a few unique numbers.
+
+    if not pd.api.types.is_numeric_dtype(series):
+
+        if _looks_category_like(
+            sample,
+            sample_unique
+        ):
+            return "category"
 
     # ---------------------------------------------------------------
     # 5. QUANTITY / INTEGER
